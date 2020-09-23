@@ -7,10 +7,20 @@ class Sidebar extends Component {
   }
 
   render () {
-   
-    let responseHTML = '';
+   return(
+    `<ul> 
+    <li>`+this.props.AlbertEggstein+`</li>
+   <li> `+this.props.AttilatheHen+`</li>
+   <li> `+this.props.AttilatheHen+`</li>
+   <li> `+this.props.DixieChick+`</li>
+   <li> `+this.props.GregoryPeck+`</li>
+   <li> `+this.props.MaryPoopins+`</li>
+   </ul>
+   `);
+    let responseHTML =  '',
 
-    this.props.menu.forEach( (item) => {
+    this.props.menu.forEach( (item) => {  
+   
       // TODO: Add (concatenate) the value of each item to the variable responseHTML. Each should be wrapped in <li></li>
     });
 

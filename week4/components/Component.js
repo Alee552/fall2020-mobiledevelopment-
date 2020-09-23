@@ -4,6 +4,10 @@ class Component {
     this.props = props;
   }
 
+
+  render () {
 }
+}
+
 
 export default Component;
