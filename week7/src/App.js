@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import StepCounter from './components/StepCounter';
+import Active from './components/Active';
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
           
         </p>
       <StepCounter/>
+      <Active/>
+
       </header>
     </div>
   );
