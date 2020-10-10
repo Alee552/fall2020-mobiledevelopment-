@@ -16,9 +16,7 @@ export default class StepCounter extends React.Component {
       return(
         <div class = "tracker">
        <p> Count: {this.state.counter}</p>
-       <button onclick={( ) => {
-         this.setState({counter: this.State.Counter + 1});
-         )}> Increase! </button>
+       <button onclick={( ) => {this.setState({counter: this.State.Counter + 1})}}> Increase! </button>
                
        </div>
     
