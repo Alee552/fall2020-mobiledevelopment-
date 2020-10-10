@@ -2,6 +2,10 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Counter from './components/StepCounter';
+
+import Reset from './components/StepCounter';
+
 function App() {
   return (
     <div className="App">
