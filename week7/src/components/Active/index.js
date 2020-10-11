@@ -14,7 +14,7 @@ export default class Active extends React.Component {
   
     render() {
       return(
-        <div class = "wigdet">
+        <div class = "widget">
        <p> SwimLaps : {this.state.counter}</p>
        <button onClick={( ) => {
          this.setState({counter: this.state.counter + 1})}}> Increase! </button>
