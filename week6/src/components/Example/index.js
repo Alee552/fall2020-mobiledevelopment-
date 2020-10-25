@@ -1,15 +1,12 @@
 import React from 'react';
-import React from 'react';
-import   Image from './images/nasaunsplash.jpg'; 
 
 export default class Example extends React.Component {
-
 render() {
   return (<p> Hi, my name is { this.props.name }. </p>);
     }
 }
 
-
+//Attempt to change background color 
 class Example extends React.Component {
   render() {
     return (
@@ -19,6 +16,7 @@ class Example extends React.Component {
     );
   }
 }
+// ATTEMPT TO CHANGE FONT COLOR OF NAME 
 class Example extends React.Component {
   render() {
     return (
