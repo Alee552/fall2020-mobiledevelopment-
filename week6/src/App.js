@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
 import Example from './components/Example';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Example name ="Alexis Lee"/> 
+        <p style="Hello everyone"/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
