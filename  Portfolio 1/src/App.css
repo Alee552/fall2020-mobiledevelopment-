@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+button{
+  width: 80px;
+  height: 40px;
+  margin: 15px;
+}
+.redButton{
+  background-color: rgb(211, 11, 11);
+  color: rgb(95, 21, 179);
+}
+
+.greenButton{
+  background-color: rgb(17, 156, 70);
+  color: rgb(19, 127, 190);
+}
