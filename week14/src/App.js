@@ -1,6 +1,6 @@
 import React from 'react';
 import { useReducer } from 'react'; 
-import {defaultState, reducer} from './components/ApplicationState '; 
+import {defaultState, reducer} from './components/ApplicationState'; 
 import logo from './logo.svg';
 import './App.css';
 
@@ -8,11 +8,14 @@ import StepCounter from './components/StepCounter';
 import Active from './components/Active';
 
 function App() {
-  const [state, dispatch]= useReducer(reducer, {count: 0}); 
+  const [state, dispatch] = useReducer(reducer,defaultState); 
 
   function increment(){ 
     dispatch({type:'increment'}); 
   }
+function decrement(){
+  dispatch({type: 'decrement'});
+}
   return (
     <div className="App">
       <header className="App-header">

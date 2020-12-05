@@ -17,10 +17,11 @@ export default class StepCounter extends React.Component {
         <div class = "tracker">
        <p> StepsLog: {this.state.counter}</p>
        <button onClick={( ) => {
-         this.setState({counter: this.state.counter + 1})}}> Increase! </button>
+         this.setState({counter: this.state.counter + 1})}}> Increment! </button>
          <button onClick={( ) => {
          this.setState({counter: 0})}}> Reset </button>
-
+<button onClick={( ) => {
+         this.setState({counter: this.state.counter - 1})}}> Decrement! </button>
                
        </div>
     
