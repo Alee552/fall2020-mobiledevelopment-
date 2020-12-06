@@ -3,30 +3,25 @@ import React from 'react';
 export default class Active extends React.Component {
 
   constructor(props) {
-    super(props);
-    
-      this.state= {
-        counter: 0
-    
+      super(props);
+      this.props = props; 
+      this.state = {
+        count: 2
       };
     }
-    
-  
-    render() {
-      return(
-        <div class = "widget">
-       <p> SwimLaps : {this.state.counter}</p>
-       <button onClick={( ) => {
-         this.setState({counter: this.state.counter + 1})}}> Increase! </button>
-         <button onClick={( ) => {
-         this.setState({counter: 0})}}> Reset </button>
 
-               
-       </div>
-    
+    render() {
+        return(
+          <div class = "widget">
+            <p> SwimLaps: {this.props.state.count2}</p>
+            <button onClick={( ) => {
+              this.props.dispatch({ type: "increment2" });
+            }}>increment!</button>
+            <button onClick={( ) => {
+              this.props.dispatch({ type: "decrement2" });
+            }}>Decrement!</button>
+          </div>
         );
       }
-  
-      };
+    }
 
-      

@@ -3,30 +3,24 @@ import React from 'react';
 export default class StepCounter extends React.Component {
 
   constructor(props) {
-    super(props);
-    
-      this.state= {
-        counter: 0
-    
+      super(props);
+      this.props = props; 
+      this.state = {
+        count: 0
       };
     }
-    
-  
+
     render() {
-      return(
-        <div class = "tracker">
-       <p> StepsLog: {this.state.counter}</p>
-       <button onClick={( ) => {
-         this.setState({counter: this.state.counter + 1})}}> Increment! </button>
-         <button onClick={( ) => {
-         this.setState({counter: 0})}}> Reset </button>
-<button onClick={( ) => {
-         this.setState({counter: this.state.counter - 1})}}> Decrement! </button>
-               
-       </div>
-    
+        return(
+          <div class = "tracker">
+            <p> StepsLog: {this.props.state.count}</p>
+            <button onClick={( ) => {
+              this.props.dispatch({ type: "increment" });
+            }}>increment!</button>
+            <button onClick={( ) => {
+              this.props.dispatch({ type: "decrement" });
+            }}>Decrement!</button>
+          </div>
         );
       }
     }
-    
-  
