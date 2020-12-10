@@ -4,6 +4,7 @@ import { View } from 'react-native';
 import { Text, Button } from 'react-native-elements';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import ButtonExample from './components/Jeans';
 
 
 function HomeScreen(props) {
@@ -14,8 +15,6 @@ function HomeScreen(props) {
         title="Steps"
         onPress={() => props.navigation.navigate("Steps Tracker" )}
       />
-    
-  );
    <Button
         title="Swim Laps"
         onPress={() => props.navigation.navigate("Swim Laps Tracker")}
@@ -26,45 +25,15 @@ function HomeScreen(props) {
 }
 
 function StepsTracker  (props) {
-
-  let [steps, changeSteps] = useState(0);
-
 return(
-  <View style={{flex:1,  alignItems: 'center', justifyContent: 'center' }}>
-    <Text> Steps: {steps} </Text>
-    <Button title="Increase" onPress={( ) => {
-        changeSteps(steps + 1);}} />
-    <Button title="Reset" onPress={() => {
-      changeSteps(0);
-    }} />
-    <Button
-        title="Tap Go Back Home"
-        onPress={() => props.navigation.navigate('Home')}
-      />
-</View>
-
-);
-}
-
-
-
-function SwimLapsTracker (props) {
-
-let [swimlaps, changeSwimLaps]= useState(0);
-
-return(
-  <View style={{flex:1,  alignItems: 'center', justifyContent: 'center' }}>
-    <Text> SwimLaps: {swimlaps} </Text>
-    <Button title="Increase" onPress={( ) => {
-        changeSwimLaps(swimlaps + 1);}} />
-    <Button title="Reset" onPress={() => {
-      changeSwimLaps(0);
-    }} />
-    <Button
-        title="Tap Go Back Home"
-        onPress={() => props.navigation.navigate('Home')}
-      />
-</View>
+  <View>
+<Text>Jeans</Text>
+<ButtonExample />
+<Button 
+  title="Back to Home"
+  onPress={() => props.navigation.navigate('Home')}
+  />
+  </View>
 );
 }
 
