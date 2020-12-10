@@ -1,12 +1,11 @@
 import 'react-native-gesture-handler';
-import React,  {useState} from 'react';
-import { View, Text } from 'react-native';
-import { Button } from 'react-native-elements';
+import React, { useState } from 'react';
+import { View } from 'react-native';
+import { Text, Button } from 'react-native-elements';
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createStackNavigator } from '@react-navigation/stack';
 
 
-// or any pure javascript modules available in npm
 function HomeScreen(props) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -66,20 +65,20 @@ return(
         onPress={() => props.navigation.navigate('Home')}
       />
 </View>
-
 );
 }
-const Drawer= createDrawerNavigator();
 
+const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator>
-        <Drawer.Screen name="Home" component={HomeScreen} />
-        <Drawer.Screen name="Steps Tracker" component={StepsTracker} />
-          <Drawer.Screen name="Swim Laps Tracker" component={SwimLapsTracker} />
-      </Drawer.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Steps Tracker" component={StepsTracker} />
+            <Stack.Screen name="Swim Laps Tracker" component={SwimLapsTracker} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
-export default App();
+
+export default App;
