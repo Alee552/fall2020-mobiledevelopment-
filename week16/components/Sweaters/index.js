@@ -5,10 +5,10 @@ const { useReducer, useRef } = React
 
 const initialState = {
   additionalPrice: 0,
-Jeans: {
+Sweaters: {
     price: 13,
-    name: "Stylish Jeans",
-    image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/tc-jeans-1549912945.jpg?crop=1.00xw:1.00xh;0,0&resize=480:*",
+    name: "Sweaters",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdgldDygo6DDc6mAozUD13d9sD3qKqZwayeg&usqp=CAU",
     features: []
   },
   store: [
@@ -25,14 +25,14 @@ const reducer = (state, action) => {
       return {
         ...state,
         additionalPrice: state.additionalPrice - action.item.price,
-   Jeans: { ...state.Jeans, features: state.Jeans.features.filter((x) => x.id !== action.item.id)},
+   Sweaters: { ...state.Sweaters, features: state.Sweaters.features.filter((x) => x.id !== action.item.id)},
         store: [...state.store, action.item]
       };
     case "BUY_ITEM":
       return {
         ...state,
         additionalPrice: state.additionalPrice + action.item.price,
-    Jeans: { ...state.Jeans, features: [...state.Jeans.features, action.item] },
+      Sweaters: { ...state.Sweaters, features: [...state.Sweaters.features, action.item] },
         store: state.store.filter((x) => x.id !== action.item.id)
       }
     default:
@@ -56,16 +56,16 @@ const App = () => {
     <div className="boxes">
       <div className="box">
         <figure className="image is-128x128">
-          <img src={state.Jeans.image} />
+          <img src={state.Sweaters.image} />
         </figure>
-        <h2>{state.Jeans.name}</h2>
-        <p>Amount: ${state.Jeans.price}</p>
+        <h2>{state.Sweaters.name}</h2>
+        <p>Amount: ${state.Sweaters.price}</p>
         <div className="content">
           <h6>Added features:</h6>
-          {state.Jeans.features.length ? 
+          {state.Sweaters.features.length ? 
             (
               <ol type="1">
-                {state.Jeans.features.map((item) => (
+                {state.Sweaters.features.map((item) => (
                   <li key={item.id}>
                     <button
                       onClick={() => removeFeature(item)}
@@ -75,7 +75,7 @@ const App = () => {
                   </li>
                 ))}
               </ol>
-            ) : <p>Stretchy and UltraComfort Fit!</p>
+            ) : <p>Super Comfy and Warm!</p>
           }
         </div>
       </div>
@@ -94,13 +94,13 @@ const App = () => {
                 </li>
               ))}
             </ol>
-            ) : <p>Goes Great with any Cute Top!</p>
+            ) : <p>Great for Sweater Weather!</p>
           }
         </div>
 
         <div className="content">
         <h4>
-          Total Amount: ${state.Jeans.price + state.additionalPrice}
+          Total Amount: ${state.Sweaters.price + state.additionalPrice}
         </h4>
       </div>
       </div>

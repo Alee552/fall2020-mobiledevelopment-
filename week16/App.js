@@ -8,13 +8,15 @@ import ButtonExample from './components/Jeans';
 import ButtonCardigans from './components/Cardigans';
 import ButtonWinterBoots from './components/WinterBoots';
 import ButtonCoolBeanies from './components/CoolBeanies';
+import ButtonInfinityScarves from './components/InfinityScarves';
+import ButtonSweaters from './components/Sweaters';
 
 
 function HomeScreen(props) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text><h1>Passion Fashions </h1></Text>
-      <Text><h2><p>Shop our Fall Collection!</p></h2></Text>
+      <Text><p>Shop our Fall Collection!</p></Text>
  <Button
         title="Jeans"
         onPress={() => props.navigation.navigate("Jeans" )}
@@ -31,6 +33,15 @@ function HomeScreen(props) {
         title="CoolBeanies"
         onPress={() => props.navigation.navigate("CoolBeanies")}
       />  
+         <Button
+        title="Sweaters"
+        onPress={() => props.navigation.navigate("Sweaters")}
+      />  
+      <Button
+        title="InfinityScarves"
+        onPress={() => props.navigation.navigate("InfinityScarves")}
+      />  
+
 </View>
 );
 }
@@ -64,7 +75,7 @@ function CardigansScreen (props) {
   function WinterBootsScreen (props) {
     return(
       <View>
-    <Text>WinterBootsScreen</Text>
+    <Text>WinterBoots</Text>
     <ButtonWinterBoots/>
     <Button 
       title="Back to Home"
@@ -74,11 +85,11 @@ function CardigansScreen (props) {
     );
     }
 
-    function SweaterScreen (props) {
+    function SweatersScreen (props) {
       return(
         <View>
-      <Text>WinterBootsScreen</Text>
-      <ButtonWinterBoots/>
+      <Text>Sweaters</Text>
+      <ButtonSweaters/>
       <Button 
         title="Back to Home"
         onPress={() => props.navigation.navigate('Home')}
@@ -89,7 +100,7 @@ function CardigansScreen (props) {
       function CoolBeaniesScreen (props) {
         return(
           <View>
-        <Text>CoolBeaniesScreen</Text>
+        <Text>CoolBeanies</Text>
         <ButtonCoolBeanies/>
         <Button 
           title="Back to Home"
@@ -98,7 +109,18 @@ function CardigansScreen (props) {
           </View>
         );
         }
-    
+        function InfinityScarvesScreen (props) {
+          return(
+            <View>
+          <Text>InfinityScarves</Text>
+          <ButtonInfinityScarves/>
+          <Button 
+            title="Back to Home"
+            onPress={() => props.navigation.navigate('Home')}
+            />
+            </View>
+          );
+          }
 
 
 const Stack = createStackNavigator();
@@ -111,8 +133,9 @@ function App() {
         <Stack.Screen name="Jeans" component={JeanScreen} />
         <Stack.Screen name="Cardigans" component={CardigansScreen} />
         <Stack.Screen name="WinterBoots" component={WinterBootsScreen} />
-        <Stack.Screen name="Sweater" component={SweaterScreen} />
+        <Stack.Screen name="Sweaters" component={SweatersScreen} />
         <Stack.Screen name="CoolBeanies" component={CoolBeaniesScreen} />
+        <Stack.Screen name="InfinityScarves" component={InfinityScarvesScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -5,17 +5,17 @@ const { useReducer, useRef } = React
 
 const initialState = {
   additionalPrice: 0,
-Jeans: {
+InfinityScarves: {
     price: 13,
-    name: "Stylish Jeans",
-    image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/tc-jeans-1549912945.jpg?crop=1.00xw:1.00xh;0,0&resize=480:*",
+    name: "Infinity Scarves ",
+    image: "https://daisyfarmcrafts.com/wp-content/uploads/2018/11/fullsizeoutput_b78-600x593.jpeg",
     features: []
   },
   store: [
-    { id: 1, name: "Small", price: 0},
-    { id: 2, name: "Medium", price: 2 },
-    { id: 3, name: "Large", price: 3 },
-    { id: 4, name: "XL ", price: 5  }
+    { id: 1, name: "Yellow", price: 0},
+    { id: 2, name: "Burgundy", price: 2 },
+    { id: 3, name: "Pink", price: 3 },
+    { id: 4, name: "Burnt Orange", price: 5  }
   ]
 };
 
@@ -25,14 +25,14 @@ const reducer = (state, action) => {
       return {
         ...state,
         additionalPrice: state.additionalPrice - action.item.price,
-   Jeans: { ...state.Jeans, features: state.Jeans.features.filter((x) => x.id !== action.item.id)},
+       InfinityScarves: { ...state.InfinityScarves, features: state.InfinityScarves.features.filter((x) => x.id !== action.item.id)},
         store: [...state.store, action.item]
       };
     case "BUY_ITEM":
       return {
         ...state,
         additionalPrice: state.additionalPrice + action.item.price,
-    Jeans: { ...state.Jeans, features: [...state.Jeans.features, action.item] },
+        car: { ...state.InfinityScarves, features: [...state.InfinityScarves.features, action.item] },
         store: state.store.filter((x) => x.id !== action.item.id)
       }
     default:
@@ -56,16 +56,16 @@ const App = () => {
     <div className="boxes">
       <div className="box">
         <figure className="image is-128x128">
-          <img src={state.Jeans.image} />
+          <img src={state.InfinityScarves.image} />
         </figure>
-        <h2>{state.Jeans.name}</h2>
-        <p>Amount: ${state.Jeans.price}</p>
+        <h2>{state.InfinityScarves.name}</h2>
+        <p>Amount: ${state.InfinityScarves.price}</p>
         <div className="content">
           <h6>Added features:</h6>
-          {state.Jeans.features.length ? 
+          {state.InfinityScarves.features.length ? 
             (
               <ol type="1">
-                {state.Jeans.features.map((item) => (
+                {state.car.features.map((item) => (
                   <li key={item.id}>
                     <button
                       onClick={() => removeFeature(item)}
@@ -75,7 +75,7 @@ const App = () => {
                   </li>
                 ))}
               </ol>
-            ) : <p>Stretchy and UltraComfort Fit!</p>
+            ) : <p>Made with 100% cotton!.</p>
           }
         </div>
       </div>
@@ -94,13 +94,13 @@ const App = () => {
                 </li>
               ))}
             </ol>
-            ) : <p>Goes Great with any Cute Top!</p>
+            ) : <p>Get yours NOW!</p>
           }
         </div>
 
         <div className="content">
         <h4>
-          Total Amount: ${state.Jeans.price + state.additionalPrice}
+          Total Amount: ${state.InfinityScarves.price + state.additionalPrice}
         </h4>
       </div>
       </div>
