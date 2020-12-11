@@ -7,12 +7,14 @@ import { createStackNavigator } from '@react-navigation/stack';
 import ButtonExample from './components/Jeans';
 import ButtonCardigans from './components/Cardigans';
 import ButtonWinterBoots from './components/WinterBoots';
+import ButtonCoolBeanies from './components/CoolBeanies';
 
 
 function HomeScreen(props) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text><h1>Passion Fashions </h1></Text>
+      <Text><h2><p>Shop our Fall Collection!</p></h2></Text>
  <Button
         title="Jeans"
         onPress={() => props.navigation.navigate("Jeans" )}
@@ -24,6 +26,10 @@ function HomeScreen(props) {
       <Button
         title="WinterBoots"
         onPress={() => props.navigation.navigate("WinterBoots")}
+      />  
+        <Button
+        title="CoolBeanies"
+        onPress={() => props.navigation.navigate("CoolBeanies")}
       />  
 </View>
 );
@@ -80,7 +86,19 @@ function CardigansScreen (props) {
         </View>
       );
       }
-  
+      function CoolBeaniesScreen (props) {
+        return(
+          <View>
+        <Text>CoolBeaniesScreen</Text>
+        <ButtonCoolBeanies/>
+        <Button 
+          title="Back to Home"
+          onPress={() => props.navigation.navigate('Home')}
+          />
+          </View>
+        );
+        }
+    
 
 
 const Stack = createStackNavigator();
@@ -94,6 +112,7 @@ function App() {
         <Stack.Screen name="Cardigans" component={CardigansScreen} />
         <Stack.Screen name="WinterBoots" component={WinterBootsScreen} />
         <Stack.Screen name="Sweater" component={SweaterScreen} />
+        <Stack.Screen name="CoolBeanies" component={CoolBeaniesScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
